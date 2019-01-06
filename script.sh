@@ -139,7 +139,7 @@ eof
    openssl md5 fichier4.txt
    echo "." >> fichier4.txt
    echo "empreinte MD5 fichier 4 calculé (modifié)"
-   openssl md5 fichie4.txt
+   openssl md5 fichier4.txt
 
 
    echo "MD5 utilise une construction de Merkle-Damgard. On découpe le message en blocs de taille fixe de 512 bits. On traite ensuite les blocs séquentiellement grâce à une fonction de compression qui écrase l'espace d'entrée et produit des données qui ne peuvent être inversées (contrairement à la définition habituelle de la compression non-destructive). Les entrées de cette fonction sont un bloc de 512 bits et une variable de 128 bits. Pour le premier bloc du message, on définit un vecteur d'initialisation de 128 bits (imposé par le standard) et on introduit les 512 bits dans la fonction de compression. Celle-ci retourne une empreinte de 128 bits qui est transférée vers les 128 bits de la compression suivante. On traite ainsi les blocs les uns après les autres en chaînant les résultats. La sortie du dernier bloc est l'empreinte finale." > fichier5.txt
