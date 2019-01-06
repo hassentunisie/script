@@ -146,7 +146,7 @@ eof
    echo $username |  openssl md5 >>fichier5.txt
    openssl md5 fichier5.txt > fichier5_md5.txt
    echo "empreinte MD5 fichier 5 fournis (non modifié)"
-   openssl md5 fichier3.txt
+   openssl md5 fichier5.txt
 
    echo ${citation[$i]} > fichier6.txt 
    echo ${citation[$j]} >> fichier6.txt
