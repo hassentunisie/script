@@ -109,21 +109,23 @@ eof
    cd /home/$username/tp2
 
    echo "$username --------------------------------------------------------------------------------------------"
-
+   echo "Vous trouvez ci-dessous les empreintes MD5 des fichiers fichier2.txt, fichier3.txt fichier4.md5 et fichier5.txt" > empreinte_md5_fournis.txt
    echo "Un algorithme de hachage permet de générer l'empreinte d'un fichier ou d'un texte" > fichier1.txt
    echo "empreinte MD5 fichier 1 fournis"
    openssl md5 fichier1.txt
 
    echo "On nomme fonction de hachage, de l'anglais hash function (hash : pagaille, désordre, recouper et mélanger) par analogie avec la cuisine, une fonction particulière qui, à partir d'une donnée fournie en entrée, calcule une empreinte servant à identifier rapidement, bien qu'incomplètement, la donnée initiale. Les fonctions de hachage sont utilisées en informatique et en cryptographie." > fichier2.txt
    echo $username |  openssl md5 >>fichier2.txt
-   openssl md5 fichier2.txt > fichier2_md5.txt
+   #openssl md5 fichier2.txt > fichier2_md5.txt
+   openssl md5 fichier2.txt >> empreinte_md5_fournis.txt
    echo "empreinte MD5 fichier 2 fournis (non modifié)"
    openssl md5 fichier2.txt
 
 
    echo "On rencontre bien souvent sur les pages de téléchargement des empreintes calculées grâce à des algorithmes comme MD5. Ces « résumés » des fichiers permettent notamment de vérifier la validité et l'intégrité des archives récupérées. Cependant, peu d'utilisateurs connaissent le fonctionnement de ces primitives, les fonctions de hachages, qui sont très répandues. Nous nous intéresserons principalement aux fonctions de hachages dites cryptographiques qui touchent un vaste domaine d'applications. Dès la fin des années 1990, certaines fonctions de hachage populaires ont été analysées puis « cassées ». Cet article examine les enjeux liés à ces algorithmes et leur fonctionnement" > fichier3.txt
    echo $username |  openssl md5 >>fichier3.txt
-   openssl md5 fichier3.txt > fichier3_md5.txt
+   #openssl md5 fichier3.txt > fichier3_md5.txt
+   openssl md5 fichier3.txt >> empreinte_md5_fournis.txt
    echo "empreinte MD5 fichier 3 fournis (modifié)"
    openssl md5 fichier3.txt
    echo "." >> fichier3.txt
@@ -134,19 +136,21 @@ eof
 
    echo "La fonction MD5 (message digest 5) a été inventée en 1991 par Ronald Rivest, un éminent cryptologue et professeur du MIT qui est aussi à l'origine du RSA (Rivest, Shamir et Adleman), l'un des premiers systèmes de cryptographie asymétrique. Rivest a élaboré d'autres fonctions de hachage comme MD2 et MD4 ainsi que des algorithmes de chiffrement avec la famille des RCx (RC4 est le plus connu puisque il est utilisé dans SSL et WEP)" > fichier4.txt
    echo $username |  openssl md5 >>fichier4.txt
-   openssl md5 fichier4.txt > fichier4_md5.txt
+   #openssl md5 fichier4.txt > fichier4_md5.txt
+   openssl md5 fichier4.txt >> empreinte_md5_fournis.txt
    echo "empreinte MD5 fichier 4 fournis (modifié)"
    openssl md5 fichier4.txt
    echo "." >> fichier4.txt
    echo "empreinte MD5 fichier 4 calculé (modifié)"
-   openssl md5 fichier4.txt
+   openssl md5 fichie4.txt
 
 
    echo "MD5 utilise une construction de Merkle-Damgard. On découpe le message en blocs de taille fixe de 512 bits. On traite ensuite les blocs séquentiellement grâce à une fonction de compression qui écrase l'espace d'entrée et produit des données qui ne peuvent être inversées (contrairement à la définition habituelle de la compression non-destructive). Les entrées de cette fonction sont un bloc de 512 bits et une variable de 128 bits. Pour le premier bloc du message, on définit un vecteur d'initialisation de 128 bits (imposé par le standard) et on introduit les 512 bits dans la fonction de compression. Celle-ci retourne une empreinte de 128 bits qui est transférée vers les 128 bits de la compression suivante. On traite ainsi les blocs les uns après les autres en chaînant les résultats. La sortie du dernier bloc est l'empreinte finale." > fichier5.txt
    echo $username |  openssl md5 >>fichier5.txt
-   openssl md5 fichier5.txt > fichier5_md5.txt
+   #openssl md5 fichier5.txt > fichier5_md5.txt
+   openssl md5 fichier5.txt >> empreinte_md5_fournis.txt
    echo "empreinte MD5 fichier 5 fournis (non modifié)"
-   openssl md5 fichier5.txt
+   openssl md5 fichier3.txt
 
    echo ${citation[$i]} > fichier6.txt 
    echo ${citation[$j]} >> fichier6.txt
